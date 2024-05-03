@@ -26,19 +26,15 @@ class Viking(Soldier):
         # your code here
         self.name = name
         super().__init__(health, strength)
- 
-
     def attack(self):
         # it should return strenght
         return self.strength         
-
     def battleCry(self):
         # your code here
         return f"Odin Owns You All!"
-
     def receiveDamage(self, damage):
         # your code here
-        self.health -= damage
+        self.health -= damage   
         if self.health > 0 :
             return f"{self.name} has received {damage} points of damage"
         else :
@@ -90,10 +86,11 @@ class War():
 
         if saxon.health <= 0 :
             self.saxonArmy.remove(saxon)
-            return f"A Saxon has died in combat"
-        else :
-            return result
+            #return result
+            #return f"A Saxon has died in combat"
+        return result
     
+
     def saxonAttack(self):
         # your code here
         viking = random.choice(self.vikingArmy)
@@ -103,6 +100,7 @@ class War():
 
         if viking.health <= 0:
             self.vikingArmy.remove(viking)
+            return result
         else :
             return result
         
