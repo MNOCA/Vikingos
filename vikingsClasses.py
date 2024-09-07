@@ -18,20 +18,27 @@ class Soldier:
         self.health -= damage
     
 
-# # Viking
+# Viking
 
-# class Viking(Soldier):
-#     def __init__(self, name, health, strength):
-#         # your code here
-#         self.name = name
-#         self.health = health
-#         self.strength = strength
+class Viking(Soldier):
+    def __init__(self, name, health, strength):
+        # your code here
+        
+        self.name = name
+        self.health = health
+        self.strength = strength
 
-#     def battleCry(self):
-#         # your code here
+    def battleCry(self):
+        # your code here
+        return "Odin Owns You All!"
 
-#     def receiveDamage(self, damage):
-#         # your code here
+    def receiveDamage(self, damage):
+        # your code here
+        super().receiveDamage(damage)
+        if self.health > 0:
+            return f"{self.name} has received {damage} points of damage"
+        else:
+            return f"{self.name} has died in act of combat"
 
 # # Saxon
 
