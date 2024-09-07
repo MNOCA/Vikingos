@@ -50,48 +50,37 @@ class Saxon(Soldier):
 
 # Davicente
 
-#class War():
-    #def __init__(self):
+class War():
+    def __init__(self):
+        self.vikingArmy = []
+        self.saxonArmy = []
 
-        # your code here
-
-   # def addViking(self, viking):
-        # your code here
+    def addViking(self, viking):
+        self.vikingArmy.append(viking)
     
-    #def addSaxon(self, saxon):
-        # your code here
+    def addSaxon(self, saxon):
+       self.saxonArmy.append(saxon)
     
-   # def vikingAttack(self):
-        # your code here
-    
-    #def saxonAttack(self):
-        # your code here
+    def vikingAttack(self):
+        random_viking=random.choice(self.vikingArmy)
+        random_saxon=random.choice(self.saxonArmy)
+        result = random_saxon.receiveDamage(random_viking.strength)
+        if random_saxon.health <= 0:
+            self.saxonArmy.remove(random_saxon)
+        return(result)
 
-   # def showStatus(self):
-        # your code here
-   # pass
+    def saxonAttack(self):
+        random_saxon=random.choice(self.saxonArmy)
+        random_viking=random.choice(self.vikingArmy)
+        result = random_viking.receiveDamage(random_saxon.strength)
+        if random_viking.health <= 0:
+            self.vikingArmy.remove(random_viking)
+        return(result)
 
-#yop
-#class War2:
-
-    #def __init__(self):
-        # your code here
-
-    #def addViking(self, Viking):
-        # your code here
-    
-    #def addSaxon(self, Saxon):
-        # your code here
-    
-    #def vikingAttack(self):
-        # your code here
-
-    #def saxonAttack(self):
-        # your code here
-
-   # def showStatus(self):
-        # your code here
-
-    #   pass
-
-
+    def showStatus(self):
+        if len(self.saxonArmy)==0:
+            return "Vikings have won the war of the century!"
+        elif len(self.vikingArmy)==0:
+            return "Saxons have fought for their lives and survive another day..."
+        elif len(self.saxonArmy) == 1 and len(self.vikingArmy) == 1:
+            return "Vikings and Saxons are still in the thick of battle."
