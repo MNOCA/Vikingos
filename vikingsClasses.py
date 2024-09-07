@@ -23,10 +23,8 @@ class Soldier:
 class Viking(Soldier):
     def __init__(self, name, health, strength):
         # your code here
-        
+        super().__init__(health, strength)
         self.name = name
-        self.health = health
-        self.strength = strength
 
     def battleCry(self):
         # your code here
