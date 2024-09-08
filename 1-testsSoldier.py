@@ -18,7 +18,7 @@ class TestSoldier(unittest.TestCase):
         self.assertEqual(self.soldier.health, self.health)
 
     def testStrength(self):
-        self.assertEqual(self.soldier.strength, self.strength)
+        self.assertEqual(self.soldier.strenght, self.strength)
 
     def testAttackShouldBeFunction(self):
         self.assertEqual(callable(self.soldier.attack), True)
