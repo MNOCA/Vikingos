@@ -41,7 +41,7 @@ So, let's say you have already created the class for Soldiers.
 3. In your terminal, run the test file for that class
 
 ```bash
-$ python3 1-testSoldier.py --v
+$ python3 1-testsSoldier.py --v
 ```
 
 ### Correct Test
