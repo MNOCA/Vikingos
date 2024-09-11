@@ -180,7 +180,8 @@ class War():
         attack_result = saxon.receiveDamage(viking.attack())
 
         # remove dead saxons from the list
-        self.saxonArmy = [saxon for saxon in self.saxonArmy if saxon.health > 0]
+        if saxon.health <= 0:
+            self.saxonArmy.remove(saxon)
 
         return attack_result
 
@@ -202,7 +203,8 @@ class War():
         attack_result = viking.receiveDamage(saxon.attack())
 
         # remove dead viking from the list
-        self.vikingArmy = [viking for viking in self.vikingArmy if viking.health > 0]
+        if viking.health <= 0:
+            self.vikingArmy.remove(viking)
 
         return attack_result
 
