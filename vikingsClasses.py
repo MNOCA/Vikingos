@@ -1,32 +1,76 @@
 import random
 
-# Soldier
+# SOLDIER ------------------------------------------------------------------------------------------
 
 
 class Soldier:
-    def __init__(self, health, strength):
+    """
+    Parent class Viking and Saxon inherit from
+    """
+
+    def __init__(self, health: int, strength: int) -> None:
+        """Constructor
+
+        Args:
+            health (int): health points (soldier is dead if 0 or below)
+            strength (int): dammage points caused to opponent during an attack
+        """
         self.health = health
         self.strength = strength
 
-    def attack(self):
+    def attack(self) -> int:
+        """ Getter for the health points
+
+        Returns:
+            int: return strength points
+        """
         return self.strength
 
-    def receiveDamage(self, damage):
+    def receiveDamage(self, damage: int) -> None:
+        """Substract damage points to soldier's health
+
+        Args:
+            damage (int): points to substract
+        """
         self.health -= damage
 
 
-# Viking
+# VIKING -------------------------------------------------------------------------------------------
+
 
 class Viking(Soldier):
+    """
+    Child class of Soldier
+    """
 
-    def __init__(self, name, health, strength):
-        super().__init__(health, strength)
+    def __init__(self, name: str, health: int, strength: int) -> None:
+        """Constructor
+
+        Args:
+            name (str): viking name
+            health (int): viking health points (viking is dead if 0 or below)
+            strength (int): viking strength points
+        """
+        super().__init__(health, strength)  # initialise parent class
         self.name = name
 
-    def battleCry(self):
+    def battleCry(self) -> str:
+        """Yells a battle cry
+
+        Returns:
+            str: battle cry text
+        """
         return "Odin Owns You All!"
 
-    def receiveDamage(self, damage):
+    def receiveDamage(self, damage: int) -> str:
+        """Applies damage to the viking's health
+
+        Args:
+            damage (int): points to substract
+
+        Returns:
+            str: result of the attack
+        """
         self.health -= damage
 
         if self.health > 0:
@@ -35,13 +79,33 @@ class Viking(Soldier):
         return f"{self.name} has died in act of combat"
 
 
-# Saxon
+# SAXON --------------------------------------------------------------------------------------------
+
 
 class Saxon(Soldier):
-    def __init__(self, health, strength):
-        super().__init__(health, strength)
+    """
+    Child class of Soldier
+    """
 
-    def receiveDamage(self, damage):
+    def __init__(self, health: int, strength: int) -> None:
+        """Constructor
+
+        Args:
+            health (int): health points (saxon is dead if 0 or below)
+            strength (int): dammage points caused to opponent during an attack
+        """
+        super().__init__(health, strength)  # initialise parent class
+
+    def receiveDamage(self, damage: int) -> str:
+        """Apply damage to the saxon's health
+
+        Args:
+            damage (int): points to substract
+
+        Returns:
+            str: result of the attack
+        """
+
         self.health -= damage
 
         if self.health > 0:
@@ -50,35 +114,60 @@ class Saxon(Soldier):
         return "A Saxon has died in combat"
 
 
+# WAR ----------------------------------------------------------------------------------------------
 
-# Davicente
 
 class War():
+    """
+    Class to manage the war between vikings and saxons
+    """
 
-    def __init__(self):
-
+    def __init__(self) -> None:
+        """Constructor"""
         self.vikingArmy = []
         self.saxonArmy = []
 
-    def __repr__(self):
-        
+    def __repr__(self) -> str:
+        """String representation of the current state of both armies to print
+
+        Returns:
+            str: string representation
+        """
+
+        # vikings army
         string = f'\n{len(self.vikingArmy)} VIKINGS:\n'
         for viking in self.vikingArmy:
             string += f"{viking.name}, {viking.health}, {viking.strength}\n"
-        
+
+        # saxons army
         string += f"{len(self.saxonArmy)} SAXONS\n"
         for saxon in self.saxonArmy:
             string += f"{saxon.health}, {saxon.strength}\n"
-        
+
         return string
 
-    def addViking(self, viking):
+    def addViking(self, viking: Viking) -> None:
+        """Add a viking to the viking army
+
+        Args:
+            viking (Viking): viking instance to add
+        """
         self.vikingArmy.append(viking)
 
-    def addSaxon(self, saxon):
+    def addSaxon(self, saxon: Saxon) -> None:
+        """Add a saxon to the saxon army
+
+        Args:
+            saxon (Saxon): saxon instance to add
+        """
         self.saxonArmy.append(saxon)
 
-    def vikingAttack(self):
+    def vikingAttack(self) -> str:
+        """Viking attacks a saxon
+
+        Returns:
+            str: result of the attack returned from receiveDamage method
+        """
 
         if len(self.vikingArmy) <= 0 or len(self.saxonArmy) <= 0:
             return
@@ -95,7 +184,12 @@ class War():
 
         return attack_result
 
-    def saxonAttack(self):
+    def saxonAttack(self) -> str:
+        """Saxon attacks a viking
+
+        Returns:
+            str: result of the attack returned from receiveDamage method
+        """
 
         if len(self.vikingArmy) <= 0 or len(self.saxonArmy) <= 0:
             return
@@ -112,7 +206,12 @@ class War():
 
         return attack_result
 
-    def showStatus(self):
+    def showStatus(self) -> str:
+        """Show the current status of the war
+
+        Returns:
+            str: string result of the war
+        """
 
         if len(self.saxonArmy) == 0:
             return "Vikings have won the war of the century!"
@@ -122,7 +221,8 @@ class War():
 
         return "Vikings and Saxons are still in the thick of battle."
 
-#yop
+
+# COMMENTING THIS PART? NOT NEEDED? ----------------------------------------------------------------
 # class War2:
 
 #     def __init__(self):
@@ -146,6 +246,7 @@ class War():
 #     pass
 
 
+# INSTANCIATION TESTS ------------------------------------------------------------------------------
 if __name__ == "__main__":
 
     def generateViking():
