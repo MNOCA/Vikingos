@@ -37,7 +37,7 @@ class TestSoldier(unittest.TestCase):
             len(signature(self.soldier.receiveDamage).parameters), 1)
 
     def testReceiveDamageReturnNone(self):
-        self.assertEqual(self.soldier.receiveDamage(50), None)
+        self.assertIsNone(self.soldier.receiveDamage(50), None)
 
     def testCanReceiveDamage(self):
         self.soldier.receiveDamage(50)

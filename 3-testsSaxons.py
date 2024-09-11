@@ -50,7 +50,7 @@ class TestSaxon(unittest.TestCase):
 
     def testReceiveDamageStringDied(self):
         self.assertEqual(self.saxon.receiveDamage(self.health),
-                         'A Saxon has died in combat')
+                        'A Saxon has died in combat')
 
 
 if __name__ == '__main__':
