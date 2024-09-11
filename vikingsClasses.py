@@ -71,7 +71,7 @@ class Viking(Soldier):
         Returns:
             str: result of the attack
         """
-        self.health -= damage
+        super().receiveDamage(damage)
 
         if self.health > 0:
             return f"{self.name} has received {damage} points of damage"
@@ -106,7 +106,7 @@ class Saxon(Soldier):
             str: result of the attack
         """
 
-        self.health -= damage
+        super().receiveDamage(damage)
 
         if self.health > 0:
             return f"A Saxon has received {damage} points of damage"
