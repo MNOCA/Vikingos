@@ -224,30 +224,6 @@ class War():
         return "Vikings and Saxons are still in the thick of battle."
 
 
-# COMMENTING THIS PART? NOT NEEDED? ----------------------------------------------------------------
-# class War2:
-
-#     def __init__(self):
-#         # your code here
-
-#     def addViking(self, Viking):
-#         # your code here
-    
-#     def addSaxon(self, Saxon):
-#         # your code here
-    
-#     def vikingAttack(self):
-#         # your code here
-
-#     def saxonAttack(self):
-#         # your code here
-
-#     def showStatus(self):
-#         # your code here
-
-#     pass
-
-
 # INSTANCIATION TESTS ------------------------------------------------------------------------------
 if __name__ == "__main__":
 
