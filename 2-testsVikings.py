@@ -46,15 +46,15 @@ class TestViking(unittest.TestCase):
 
     def testReciveDamageShouldReturnString50(self):
         self.assertEqual(self.viking.receiveDamage(50), self.name +
-                         ' has received 50 points of damage')
+                        ' has received 50 points of damage')
 
     def testReciveDamageShouldReturnString70(self):
         self.assertEqual(self.viking.receiveDamage(70), self.name +
-                         ' has received 70 points of damage')
+                        ' has received 70 points of damage')
 
     def testReceiveDamageShouldReturnStringDeath(self):
         self.assertEqual(self.viking.receiveDamage(self.health),
-                         self.name + ' has died in act of combat')
+                        self.name + ' has died in act of combat')
 
     def testBattleCry(self):
         self.assertEqual(callable(self.viking.battleCry), True)

@@ -101,8 +101,7 @@ class TestWar2(unittest.TestCase):
         self.assertEqual(len(self.war.vikingArmy), 0)
 
     def testReturnOfSaxonAttack(self):
-        self.assertEqual(self.war.saxonAttack(), self.viking.name +
-                         ' has received ' + str(self.saxon.strength) + ' points of damage')
+        self.assertEqual(self.war.saxonAttack(), self.viking.name + ' has received ' + str(self.saxon.strength) + ' points of damage')
 
     def testShowStatusShouldIsFunction(self):
         self.assertEqual(callable(self.war.showStatus), True)
@@ -112,18 +111,15 @@ class TestWar2(unittest.TestCase):
 
     def testShouldReturnStringVikingsWon(self):
         self.war.vikingAttack()
-        self.assertEqual(self.war.showStatus(),
-                         'Vikings have won the war of the century!')
+        self.assertEqual(self.war.showStatus(), "Vikings have won the war of the century!")
 
     def testShouldReturnStringSaxonsWon(self):
         for i in range(12):
             self.war.saxonAttack()
-        self.assertEqual(self.war.showStatus(
-        ), 'Saxons have fought for their lives and survive another day...')
+        self.assertEqual(self.war.showStatus(), "Saxons have fought for their lives and survive another day...")
 
     def testShouldReturnStringStillFighting(self):
-        self.assertEqual(
-            self.war.showStatus(), 'Vikings and Saxons are still in the thick of battle.')
+        self.assertEqual(self.war.showStatus(), "Vikings and Saxons are still in the thick of battle.")
 
 
 if __name__ == '__main__':
