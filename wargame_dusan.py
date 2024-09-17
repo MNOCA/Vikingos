@@ -32,3 +32,5 @@ while war.showStatus() == "Vikings and Saxons are still in the thick of battle."
 #Final Status of the War
 
 print(war.showStatus())
+
+
